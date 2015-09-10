@@ -1,5 +1,14 @@
 angular.module('SocketAnalyzerApp', [])
 
+    .directive('webSocketAnalyzer', function () {
+
+        return {
+            restrict: 'E',
+            replace: true,
+            template: '<h1>HELLO</h1>'
+        }
+    })
+
     .controller('WebSocketAnalyzerController', function ($scope) {
 
         var port;
@@ -29,6 +38,5 @@ angular.module('SocketAnalyzerApp', [])
                 $scope.$apply();
             });
         }
-
         init();
     });

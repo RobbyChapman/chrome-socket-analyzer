@@ -1,0 +1,26 @@
+{
+  "name": "chrome-socket-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome socket monitor",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobbyChapman/chrome-socket-analyzer.git"
+  },
+  "keywords": [
+    "chrome-extension",
+    "dev-tools"
+  ],
+  "author": "Robby Chapman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobbyChapman/chrome-socket-analyzer/issues"
+  },
+  "homepage": "https://github.com/RobbyChapman/chrome-socket-analyzer#readme",
+  "dependencies": {
+    "angular": "1.4"
+  }
+}
