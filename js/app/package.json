@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/RobbyChapman/chrome-socket-analyzer#readme",
   "dependencies": {
-    "angular": "1.4"
+    "angular": "1.4",
+    "browserify": "11.0.1"
   }
 }
