@@ -1,6 +1,13 @@
-<html>
-	<body>
-		<!-- Inline JS is dissalowed, they must point to the file itself -->
+<html ng-app="SocketAnalyzerApp" ng-csp="">
+	<head>
 		<script src="BootstrapSniffer.js"></script>
+		<script src="../../js/lib/angular.js"></script>
+		<script src="../../js/app/app.js"></script>
+		<title>SocketAnalyzer</title>
+	</head>
+	<body>
+		<div ng-controller="WebSocketAnalyzerController">
+			<h1>{{name}}</h1>
+		</div>
 	</body>
 </html>
