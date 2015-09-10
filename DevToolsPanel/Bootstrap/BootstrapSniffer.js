@@ -11,7 +11,6 @@
 
     https://groups.google.com/forum/#!topic/google-chrome-developer-tools/7_a0W8Y92O4
     */
-
     var request = new XMLHttpRequest();
 
     /* Note: getUrl is relative to your current position in the file structure, it is not relative to root */

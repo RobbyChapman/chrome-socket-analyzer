@@ -29,7 +29,9 @@ function decorateSocketSend() {
 
             /* This method is called from the message event itself, as well as the the raw
              data. To accommodate both use cases we have to conditionally log */
-            console.log(obj.data ? 'Response:: ' + obj.data : 'Request:: ' + obj);
+            var message = obj.data ? obj.data : obj;
+            var event = new CustomEvent("RebroadcastExtensionMessage", {detail: message});
+            window.dispatchEvent(event);
         }
 
         return function (data) {
