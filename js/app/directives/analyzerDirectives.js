@@ -2,13 +2,16 @@
  * Created by robert.chapman on 9/10/15.
  */
 
-angular.module('analyzerDirectivesModule', [])
+require('../controllers/analyzerControllers.js');
+
+angular.module('analyzerDirectivesModule', ['analyzerControllersModule'])
 
     .directive('monitorDirective', function () {
 
         return {
             restrict: 'E',
-            replace: true,
-            template: '<h1>Directive template</h1>'
+            templateUrl: '../../js/app/partials/monitorPartial.html',
+            /* See js/app/controllers/analyzerControllers.js for WebSocketAnalyzerController implementation */
+            controller: 'WebSocketAnalyzerController'
         }
     });
