@@ -20,8 +20,9 @@
     "url": "https://github.com/RobbyChapman/chrome-socket-analyzer/issues"
   },
   "homepage": "https://github.com/RobbyChapman/chrome-socket-analyzer#readme",
-  "dependencies": {
+  "devDependencies": {
     "angular": "1.4",
-    "browserify": "11.0.1"
+    "browserify": "11.1.0",
+    "watchify": "3.4.0"
   }
 }
