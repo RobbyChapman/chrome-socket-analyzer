@@ -1,3 +1,8 @@
 <div>
-    <div>{{name}}</div>
+    <button ng-click="clearRequests()">Clear requests</button>
+    <ul>
+        <li ng-repeat="socketRequest in socketRequests">
+            {{socketRequest.name}}
+        </li>
+    </ul>
 </div>

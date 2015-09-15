@@ -8,7 +8,12 @@ angular.module('analyzerControllersModule', [])
 
         var port;
 
-        $scope.name = "POC";
+        $scope.socketRequests = [];
+
+        $scope.clearRequests = function () {
+
+            $scope.socketRequests = [];
+        };
 
         function init() {
 
@@ -28,7 +33,8 @@ angular.module('analyzerControllersModule', [])
             }
             port.onMessage.addListener(function (msg) {
 
-                $scope.name = msg;
+                //$scope.name = msg;
+                $scope.socketRequests.push({name: msg});
                 /* We are outside the context of angular in this context. With that said, an apply is required */
                 $scope.$apply();
             });
