@@ -22,7 +22,10 @@
   "homepage": "https://github.com/RobbyChapman/chrome-socket-analyzer#readme",
   "devDependencies": {
     "angular": "1.4",
+    "jquery": "*",
     "browserify": "11.1.0",
-    "watchify": "3.4.0"
+    "watchify": "3.4.0",
+    "bootstrap": "*",
+    "renderjson": "1.2.0"
   }
 }

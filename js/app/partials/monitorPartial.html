@@ -1,3 +1,83 @@
-<div>
-    <button ng-click="clearRequests()">Clear requests</button>
+<style>
+
+    .renderjson a {
+        text-decoration: none;
+    }
+
+    .renderjson .disclosure {
+        color: crimson;
+        font-size: 150%;
+    }
+
+    .renderjson .syntax {
+        color: grey;
+    }
+
+    .renderjson .string {
+        color: darkred;
+    }
+
+    .renderjson .number {
+        color: darkcyan;
+    }
+
+    .renderjson .boolean {
+        color: blueviolet;
+    }
+
+    .renderjson .key {
+        color: darkblue;
+    }
+
+    .renderjson .keyword {
+        color: blue;
+    }
+
+    .renderjson .object.syntax {
+        color: lightseagreen;
+    }
+
+    .renderjson .array.syntax {
+        color: orange;
+    }
+
+    .navbar-brand {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        margin: auto;
+        z-index: -100;
+    }
+
+    #test1 {
+        margin-left: 20px;
+        z-index: 300;
+    }
+
+    #test2 {
+        margin-right: 20px;
+        float: right;
+    }
+
+    #test {
+        margin-top: 100px;
+    }
+
+    .container-fluid {
+        height: 900px;
+        overflow-y: scroll;
+    }
+
+
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Socket Analyzer</a></div>
+    <button type="button" id="test1" class="btn btn-default navbar-btn" ng-click="clearRequests()">Clear Requests</button>
+    <button type="button" id="test2" class="btn btn-default navbar-btn" ng-click="clearRequests()">Settings</button>
+</nav>
+
+<div class="container-fluid">
+    <div id="test"></div>
 </div>

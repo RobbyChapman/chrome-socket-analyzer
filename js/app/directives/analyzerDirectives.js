@@ -10,24 +10,35 @@ angular.module('analyzerDirectivesModule', ['analyzerControllersModule'])
 
         return {
             restrict: 'E',
+            scope: true,
             templateUrl: '../../js/app/partials/monitorPartial.html',
             /* See js/app/controllers/analyzerControllers.js for WebSocketAnalyzerController implementation */
             controller: 'WebSocketAnalyzerController',
-            link: function(scope, element, attrs) {
+            link: function (scope) {
 
                 var port;
 
-                scope.socketRequests = [];
-
                 scope.clearRequests = function () {
 
-                    scope.socketRequests = [];
+                    debugger;
+                    console.log("Inside clear request!");
+                    var myNode = document.getElementById("test");
+                    while (myNode.firstChild) {
+                        myNode.removeChild(myNode.firstChild);
+                    }
                 };
 
                 function init() {
 
                     createBackgroundPort();
                     registerBackgroundEventHandler();
+                    setupJsonConfig();
+                }
+
+                function setupJsonConfig() {
+
+                    renderjson.set_icons('+', '-');
+                    renderjson.set_show_to_level(1);
                 }
 
                 function createBackgroundPort() {
@@ -48,7 +59,6 @@ angular.module('analyzerDirectivesModule', ['analyzerControllersModule'])
 
                     if (frame.length > 0) {
                         var tempFrame = frame.match(/"(.+)"/)[1];
-                        debugger;
                         tempFrame = "\"" + tempFrame + "\"";
                         if (canParseJSON(tempFrame)) {
                             var messedUp = JSON.parse(JSON.parse(tempFrame));
@@ -71,8 +81,8 @@ angular.module('analyzerDirectivesModule', ['analyzerControllersModule'])
 
                 function appendNodeToDOM(node) {
 
-                    element.append(prettyPrint(node));
-                    //scope.$apply();
+                    var el = renderjson(node);
+                    document.getElementById("test").appendChild(el);
                 }
 
                 init();
