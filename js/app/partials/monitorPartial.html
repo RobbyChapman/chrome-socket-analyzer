@@ -64,6 +64,16 @@
         margin-top: 100px;
     }
 
+    .request {
+        background-color: lightgreen;
+        opacity: 0.8;
+    }
+
+    .response {
+        background-color: lightblue;
+        opacity: 0.8;
+    }
+
     .container-fluid {
         height: 900px;
         overflow-y: scroll;
@@ -74,7 +84,8 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header"><a class="navbar-brand" href="#">Socket Analyzer</a></div>
-    <button type="button" id="test1" class="btn btn-default navbar-btn" ng-click="clearRequests()">Clear Requests</button>
+    <button type="button" id="test1" class="btn btn-default navbar-btn" ng-click="clearRequests()">Clear Requests
+    </button>
     <button type="button" id="test2" class="btn btn-default navbar-btn" ng-click="clearRequests()">Settings</button>
 </nav>
 

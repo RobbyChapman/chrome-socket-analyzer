@@ -57,13 +57,17 @@ angular.module('analyzerDirectivesModule', ['analyzerControllersModule'])
 
                 function formatWebSocketFrame(frame) {
 
+
                     if (frame.length > 0) {
+                        var isRequest = (frame.match(/.+?(?=\[")/)) ? true : false;
                         var tempFrame = frame.match(/"(.+)"/)[1];
                         tempFrame = "\"" + tempFrame + "\"";
                         if (canParseJSON(tempFrame)) {
                             var messedUp = JSON.parse(JSON.parse(tempFrame));
                             var val = (typeof messedUp == 'string') ? {'data': messedUp} : messedUp;
-                            appendNodeToDOM(val);
+                            if (val) {
+                                appendNodeToDOM(val, isRequest);
+                            }
                         }
                     }
                 }
@@ -79,9 +83,10 @@ angular.module('analyzerDirectivesModule', ['analyzerControllersModule'])
                     });
                 }
 
-                function appendNodeToDOM(node) {
+                function appendNodeToDOM(node, isRequest) {
 
                     var el = renderjson(node);
+                    el.className += (isRequest) ? ' response' : ' request';
                     document.getElementById("test").appendChild(el);
                 }
 
