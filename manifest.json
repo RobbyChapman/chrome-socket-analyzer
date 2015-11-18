@@ -6,19 +6,19 @@
   "permissions": [
     "debugger"
   ],
-  "devtools_page": "DevToolsPanel/Panel.html",
+  "devtools_page": "panel/panel.html",
   "web_accessible_resources": [
-    "*",
-    "Analyzer/SocketSniffer.js"
+    "*"
   ],
   "content_scripts": [
     {
+      "run_at":"document_start",
       "matches": ["http://*/*"],
-      "js": ["content.js"]
+      "js": ["content/injector.js"]
     }
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background/background.js"]
   },
   "manifest_version": 2
 }
