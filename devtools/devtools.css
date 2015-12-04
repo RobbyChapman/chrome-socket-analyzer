@@ -1,0 +1,78 @@
+.renderjson a {
+    text-decoration: none;
+}
+
+.renderjson .disclosure {
+    color: crimson;
+    font-size: 150%;
+}
+
+.renderjson .syntax {
+    color: grey;
+}
+
+.renderjson .string {
+    color: darkred;
+}
+
+.renderjson .number {
+    color: darkcyan;
+}
+
+.renderjson .boolean {
+    color: blueviolet;
+}
+
+.renderjson .key {
+    color: darkblue;
+}
+
+.renderjson .keyword {
+    color: blue;
+}
+
+.renderjson .object.syntax {
+    color: lightseagreen;
+}
+
+.renderjson .array.syntax {
+    color: orange;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+    z-index: -100;
+}
+
+#clearRequestsButton{
+    margin-left: 20px;
+    z-index: 300;
+}
+
+#settingsButton {
+    margin-right: 20px;
+    float: right;
+}
+
+.request {
+    background-color: lightgreen;
+    opacity: 0.8;
+}
+
+.response {
+    background-color: lightblue;
+    opacity: 0.8;
+}
+
+.container-fluid {
+    height: 900px;
+    overflow-y: scroll;
+}
+
+#ws-container {
+    margin-top: 100px;
+}

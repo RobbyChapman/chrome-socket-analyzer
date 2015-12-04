@@ -9,7 +9,7 @@ chrome.runtime.onConnect.addListener(function (port) {
     _port = port;
 });
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request) {
 
     _port.postMessage(request);
 });

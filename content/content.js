@@ -2,7 +2,6 @@
  * Created by robert.chapman on 9/10/15.
  */
 
-
 function init() {
 
     logWebSocketContext();
@@ -44,7 +43,7 @@ function decorateWebSocketConstructor() {
         }
 
         wsAddListener(ws, 'open', function (event) {
-            console.log("Connection open!!");
+            //TODO: Robby, implement connection pool
         });
 
         wsAddListener(ws, 'message', function (event) {
@@ -53,7 +52,7 @@ function decorateWebSocketConstructor() {
         });
 
         wsAddListener(ws, 'close', function (event) {
-            console.log("Connection closed!!");
+            //TODO: Robby, implement connection pool
         });
 
         return ws;
@@ -66,7 +65,6 @@ function decorateWebSocketConstructor() {
     wsSend = wsSend.apply.bind(wsSend);
     OrigWebSocket.prototype.send = function (data) {
 
-        // TODO: Do something with the sent data if you wish.
         return wsSend(this, arguments);
     };
 }

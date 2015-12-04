@@ -1,8 +1,8 @@
 {
   "name": "chrome-socket-analyzer",
   "version": "1.0.0",
-  "private": true,
-  "description": "Chrome socket monitor",
+  "description": "WebSocket analyzer extension for chrome",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,8 +11,9 @@
     "url": "git+https://github.com/RobbyChapman/chrome-socket-analyzer.git"
   },
   "keywords": [
-    "chrome-extension",
-    "dev-tools"
+    "WebSocket",
+    "devtools",
+    "chrome"
   ],
   "author": "Robby Chapman",
   "license": "MIT",
@@ -20,9 +21,9 @@
     "url": "https://github.com/RobbyChapman/chrome-socket-analyzer/issues"
   },
   "homepage": "https://github.com/RobbyChapman/chrome-socket-analyzer#readme",
-  "devDependencies": {
-    "angular": "1.4",
-    "browserify": "11.1.0",
-    "watchify": "3.4.0"
+  "dependencies": {
+    "jquery": "2.1.4",
+    "bootstrap": "3.3.6",
+    "renderjson": "1.2.0"
   }
 }

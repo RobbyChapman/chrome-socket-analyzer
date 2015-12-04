@@ -3,10 +3,17 @@
  */
 var port;
 
+window.onload = function () {
+
+    init();
+};
+
 function init() {
 
     createBackgroundPort();
     registerBackgroundEventHandler();
+    setDomEventListeners();
+    setRenderJsonProps();
 }
 
 function createBackgroundPort() {
@@ -15,6 +22,7 @@ function createBackgroundPort() {
 }
 
 function canParseJSON(str) {
+
     try {
         JSON.parse(str);
     } catch (e) {
@@ -25,12 +33,8 @@ function canParseJSON(str) {
 
 function formatWebSocketFrame(frame) {
 
-    console.log("Frame is");
-    console.log(frame);
-
     if (frame.length > 0) {
         var isRequest = (frame.match(/.+?(?=\[")/)) ? true : false;
-
         var match = frame.match(/"(.+)"/);
         var tempFrame;
         if (match) {
@@ -40,7 +44,7 @@ function formatWebSocketFrame(frame) {
         }
         tempFrame = "\"" + tempFrame + "\"";
         if (canParseJSON(tempFrame)) {
-            var messedUp
+            var messedUp;
             if (typeof tempFrame !== 'string') {
                 messedUp = JSON.parse(JSON.parse(tempFrame));
             } else {
@@ -51,6 +55,21 @@ function formatWebSocketFrame(frame) {
                 appendNodeToDOM(val, isRequest);
             }
         }
+    }
+}
+
+function setDomEventListeners() {
+
+    document.getElementById("clearRequestsButton").addEventListener("click", clearRequests);
+    document.getElementById("settingsButton").addEventListener("click", clearRequests);
+
+}
+
+function clearRequests() {
+
+    var myNode = document.getElementById("ws-container");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
     }
 }
 
@@ -65,17 +84,15 @@ function registerBackgroundEventHandler() {
     });
 }
 
-function appendNodeToDOM(node, isRequest) {
+function setRenderJsonProps() {
 
-    console.log("Append to dom");
-    console.log(node);
-
-    // Must import renderjson.js
-    /*
-    var el = renderjson(node);
-    el.className += (isRequest) ? ' response' : ' request';
-    document.getElementById("test").appendChild(el);
-    */
+    renderjson.set_icons(' + ', ' - ');
+    renderjson.set_show_to_level(1);
 }
 
-init();
+function appendNodeToDOM(node, isRequest) {
+
+    var el = renderjson(node);
+    el.className += (isRequest) ? ' response' : ' request';
+    document.getElementById("ws-container").appendChild(el);
+}

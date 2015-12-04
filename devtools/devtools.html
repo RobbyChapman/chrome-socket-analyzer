@@ -1,7 +1,22 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <link href="devtools.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/renderjson/renderjson.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="devtools.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Socket Analyzer</a></div>
+    <button type="button" id="clearRequestsButton" class="btn btn-default navbar-btn">Clear Requests
+    </button>
+    <button type="button" id="settingsButton" class="btn btn-default navbar-btn">Settings</button>
+</nav>
+<div class="container-fluid">
+    <div id="ws-container"></div>
+</div>
 </body>
 </html>
