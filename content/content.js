@@ -65,6 +65,7 @@ function decorateWebSocketConstructor() {
     wsSend = wsSend.apply.bind(wsSend);
     OrigWebSocket.prototype.send = function (data) {
 
+        logWebSocketTraffic(data);
         return wsSend(this, arguments);
     };
 }

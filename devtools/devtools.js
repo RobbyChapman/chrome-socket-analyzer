@@ -37,20 +37,16 @@ function formatWebSocketFrame(frame) {
         var isRequest = (frame.match(/.+?(?=\[")/)) ? true : false;
         var match = frame.match(/"(.+)"/);
         var tempFrame;
-        if (match) {
+        var isMatch = match !== undefined && match !== null;
+        if (isMatch) {
             tempFrame = match[1];
         } else {
             tempFrame = frame;
         }
         tempFrame = "\"" + tempFrame + "\"";
         if (canParseJSON(tempFrame)) {
-            var messedUp;
-            if (typeof tempFrame !== 'string') {
-                messedUp = JSON.parse(JSON.parse(tempFrame));
-            } else {
-                messedUp = JSON.parse(tempFrame);
-            }
-            var val = (typeof messedUp == 'string') ? {'data': messedUp} : messedUp;
+            var data = (isMatch) ?  JSON.parse(JSON.parse(tempFrame)) : JSON.parse(tempFrame);
+            var val = (typeof data == 'string') ? {'data': data} : data;
             if (val) {
                 appendNodeToDOM(val, isRequest);
             }
@@ -60,6 +56,9 @@ function formatWebSocketFrame(frame) {
 
 function setDomEventListeners() {
 
+    /* Chrome extensions prevent you from attaching listeners in markup, for example onclick due to security reasons.
+    As an alternative, they recommend to attach the listeners in js itself.
+     */
     document.getElementById("clearRequestsButton").addEventListener("click", clearRequests);
     document.getElementById("settingsButton").addEventListener("click", clearRequests);
 
