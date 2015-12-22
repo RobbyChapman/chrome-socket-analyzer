@@ -10,7 +10,7 @@ UI
   - Add right aligned setting button
 
 Functionality
-    Settings (Create dialog or dropdown for the options below):
+    - Settings (Create dialog or dropdown for the options below):
       - Option to ignore ping or any heartbeat related requests.
       - Option to ignore non-JSON based requests/responses. Ping being one of them.
       - Option to show timestamp delta between associated request/response. I need to think about this one..
