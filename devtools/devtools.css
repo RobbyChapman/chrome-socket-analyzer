@@ -48,7 +48,7 @@
     z-index: -100;
 }
 
-#clearRequestsButton{
+#clearRequestsButton {
     margin-left: 20px;
     z-index: 300;
 }
@@ -69,10 +69,13 @@
 }
 
 .container-fluid {
-    height: 900px;
-    overflow-y: scroll;
+    margin-top: 56px;
+    display: flex;
 }
 
 #ws-container {
-    margin-top: 100px;
+    overflow-y: scroll;
+    width: 100%;
+    padding: 15px;
+    align-items: stretch;
 }

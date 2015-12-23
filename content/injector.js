@@ -3,10 +3,10 @@
  */
 var script = document.createElement('script');
 script.src = chrome.extension.getURL('content/content.js');
-script.onload = function() {
+script.onload = function () {
     this.parentNode.removeChild(this);
 };
-(document.head||document.documentElement).appendChild(script);
+(document.head || document.documentElement).appendChild(script);
 
 window.addEventListener("RebroadcastExtensionMessage", function (evt) {
     chrome.runtime.sendMessage(evt.detail);
