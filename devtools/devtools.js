@@ -60,8 +60,6 @@ function setDomEventListeners() {
     As an alternative, they recommend to attach the listeners in js itself.
      */
     document.getElementById("clearRequestsButton").addEventListener("click", clearRequests);
-    document.getElementById("settingsButton").addEventListener("click", clearRequests);
-
 }
 
 function clearRequests() {
