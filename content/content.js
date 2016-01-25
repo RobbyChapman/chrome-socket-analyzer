@@ -4,7 +4,7 @@
 
 function init() {
 
-    logWebSocketContext();
+    //logWebSocketContext(); <-- For development
     decorateWebSocketConstructor();
 }
 
@@ -32,16 +32,14 @@ function decorateWebSocketConstructor() {
     window.WebSocket = function WebSocket(url, protocols) {
         var ws;
         if (!(this instanceof WebSocket)) {
-            // Called without 'new' (browsers will throw an error).
             ws = callWebSocket(this, arguments);
         } else if (arguments.length === 1) {
             ws = new OrigWebSocket(url);
         } else if (arguments.length >= 2) {
             ws = new OrigWebSocket(url, protocols);
-        } else { // No arguments (browsers will throw an error)
+        } else {
             ws = new OrigWebSocket();
         }
-
         wsAddListener(ws, 'open', function (event) {
             //TODO: Robby, implement connection pool
         });
