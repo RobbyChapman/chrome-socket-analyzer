@@ -1,3 +1,18 @@
+
+
+ .oooooo..o                     oooo                      .    .oooooo..o
+d8P'    `Y8                     `888                    .o8   d8P'    `Y8
+Y88bo.       .ooooo.   .ooooo.   888  oooo   .ooooo.  .o888oo Y88bo.       .ooooo.   .ooooo.   .ooooo.  oo.ooooo.
+ `"Y8888o.  d88' `88b d88' `"Y8  888 .8P'   d88' `88b   888    `"Y8888o.  d88' `"Y8 d88' `88b d88' `88b  888' `88b
+     `"Y88b 888   888 888        888888.    888ooo888   888        `"Y88b 888       888   888 888   888  888   888
+oo     .d8P 888   888 888   .o8  888 `88b.  888    .o   888 . oo     .d8P 888   .o8 888   888 888   888  888   888
+8""88888P'  `Y8bod8P' `Y8bod8P' o888o o888o `Y8bod8P'   "888" 8""88888P'  `Y8bod8P' `Y8bod8P' `Y8bod8P'  888bod8P'
+                                                                                                         888
+                                                                                                        o888o
+
+
+
+
 When launching the default DevTools network tab you will see that Chrome does in fact have access to WebSocket traffic.
 The issue arises when the traffic gets stringified and displayed as unformatted plain text. In cases where your JSON is
 several levels deep, this data becomes quite unusable. As result, SocketScoop was built to transmogrify this data into
@@ -32,4 +47,3 @@ UI
           - Option to show timestamp delta between associated request/response. I need to think about this one..
           - Option to include a regex that ignores certain requests/responses, or only listens to certain requests/responses.
   -(H)Add right aligned button per response that gives the user the ability to copy the formatted value as text
-
