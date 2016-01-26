@@ -1,8 +1,7 @@
-/* This file needs to live at the root of the extension */
 {
-  "name": "WebSocket Analyzer",
-  "description": "Displays realtime view of socket traffic",
-  "version": "0.1",
+  "name": "SocketScoop",
+  "description": "Renders real-time WebSocket traffic",
+  "version": "0.2",
   "permissions": [
     "debugger"
   ],
@@ -10,15 +9,26 @@
   "web_accessible_resources": [
     "*"
   ],
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
   "content_scripts": [
     {
-      "run_at":"document_start",
-      "matches": ["http://*/*"],
-      "js": ["content/injector.js"]
+      "run_at": "document_start",
+      "matches": [
+        "http://*/*"
+      ],
+      "js": [
+        "content/injector.js"
+      ]
     }
   ],
   "background": {
-    "scripts": ["background/background.js"]
+    "scripts": [
+      "background/background.js"
+    ]
   },
   "manifest_version": 2
 }
