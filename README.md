@@ -19,6 +19,7 @@ into the extension panels DOM.
   * (**L**): Low
   
 **General**
+  * (**H**) Add grunt build tasks for distribution(minify(js/css), uglify, build, distribute)
   * (**H**) Add unit test framework (jasmine)
   * (**H**) Setup test suite with phantomjs support
   * (**M**) Add content length to each request/response
