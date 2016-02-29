@@ -23,7 +23,7 @@ into the extension panels DOM.
   * (**H**) Add unit test framework (jasmine)
   * (**H**) Setup test suite with phantomjs support
   * (**M**) Add content length to each request/response
-  * (**M**) Add timestamps for the delta between request/response
+  * (**M**) Add timestamps for the delta between request/response. We can use the timestamp attribute found in MessageEvent.
   * (**H**) Add right aligned button per response that gives the user the ability to copy the formatted value as text
   * (**H**) Add checkbox to ignore heartbeat(ping/pong)
 
