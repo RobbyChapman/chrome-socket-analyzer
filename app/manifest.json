@@ -1,7 +1,7 @@
 {
   "name": "SocketScoop",
   "description": "Render real time WebSocket traffic",
-  "version": "0.6",
+  "version": "0.8",
   "permissions": [
     "debugger"
   ],
