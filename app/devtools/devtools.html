@@ -5,21 +5,15 @@
     <link href="../dist/fonts/font-awesome.min.css" rel="stylesheet">
     <script src="../dist/render.min.js"></script>
     <script src="devtools.js"></script>
-
 </head>
 <body>
 <div id="header1">
     <div class="toolBarButtons">
-        <!-- Right aligned -->
-        <button class="toolBarButton right-side"><i class="fa fa-2x fa-filter"></i></button>
-        <button class="toolBarButton right-side"><i class="fa fa-2x fa-cogs"></i></button>
-        <button class="toolBarButton right-side" id="clearRequestsButton"><i class="fa fa-2x fa-refresh"></i></button>
-        <!-- Left aligned -->
-        <button class="toolBarButton left-side"><i class="fa fa-2x fa-stop"></i></button>
-        <button class="toolBarButton left-side"><i class="fa fa-2x fa-play"></i></button>
+        <button class="toolBarButton left-side" id="clearRequestsButton"><i class="fa fa-2x fa-refresh"></i></button>
     </div>
     <div id="title">SocketScoop</div>
 </div>
+<!-- WebSocket container. All request gets appended to this -->
 <div id="ws-container"></div>
 </body>
 </html>
