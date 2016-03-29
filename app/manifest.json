@@ -1,0 +1,34 @@
+{
+  "name": "SocketScoop",
+  "description": "Render real time WebSocket traffic",
+  "version": "0.10",
+  "permissions": [
+    "debugger"
+  ],
+  "devtools_page": "panel/panel.html",
+  "web_accessible_resources": [
+    "*"
+  ],
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [
+        "http://*/*"
+      ],
+      "js": [
+        "content/injector.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background/background.js"
+    ]
+  },
+  "manifest_version": 2
+}
