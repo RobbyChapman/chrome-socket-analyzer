@@ -34,6 +34,7 @@ function canParseJSON(str) {
 function formatWebSocketFrame(frame) {
 
     if (frame.length > 0) {
+        //TODO Refactor this. It can be combined into one
         var isRequest = (frame.match(/.+?(?=\[")/)) ? true : false;
         var match = frame.match(/"(.+)"/);
         var tempFrame;
@@ -45,6 +46,8 @@ function formatWebSocketFrame(frame) {
         }
         tempFrame = "\"" + tempFrame + "\"";
         if (canParseJSON(tempFrame)) {
+            /* Still do not have a solution for chrome stringifying the response twice. The best I can do is parse
+            twice to counter */
             var data = (isMatch) ?  JSON.parse(JSON.parse(tempFrame)) : JSON.parse(tempFrame);
             var val = (typeof data == 'string') ? {'data': data} : data;
             if (val) {
