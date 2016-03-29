@@ -1,7 +1,7 @@
 ###About
 When launching the default DevTools network tab you will see that Chrome does in fact have access to WebSocket traffic.
 The issue arises when the traffic gets stringified and displayed as unformatted plain text. In cases where your JSON is
-several levels deep, this data becomes quite unusable. As result, SocketScoop was built to transform this data into
+several levels deep, this data becomes quite unusable. As a result, SocketScoop was built to transform this data into
 visual components.
 
 SocketScoop works by injecting content scripts into the DOM in order to monitor all incoming and outgoing traffic.
